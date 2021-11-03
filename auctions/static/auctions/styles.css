@@ -1,0 +1,28 @@
+.body {
+    padding: 10px;
+    background-color: rgb(206, 206, 206);
+}
+
+
+.card {
+
+    margin-bottom: 10px; /* Added */
+}
+
+
+.item_image{
+    max-width: 175px;
+    height: 200px;
+}
+
+/* #Active Listings{
+    down: 5px;
+} */
+
+#text-link{
+    color:black;
+}
+
+button{
+    background-color: aliceblue;
+}

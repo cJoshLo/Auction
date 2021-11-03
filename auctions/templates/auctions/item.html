@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block body %}
+
+
+<h1> Item {{items.id}}</h1>
+
+    <img class="item_image" src="{{items.image.url}}"><br>
+    <h3>Title: {{items.title}}</h3><br>
+    Description: {{items.description}}<br>
+    Current Bid: ${{items.startingBid}}  --({{items.currentBider.username}})<br>
+    Date Posted: {{items.created_date}}<br> 
+    Posted By: {{items.creator.username}}
+    {% if items.creator.username != user.username %}
+        <div class="form-group">
+            <form action="{% url 'item_page' items.id %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit">
+            </form>
+        </div>
+    {% endif %}    
+    
+    {% if items.creator.username == user.username %}
+        <br>
+        <button><a href="{% url 'delete_item' items.id %}">Delete</button></a>
+        <br>
+    {% endif %}    
+<br>
+<br>
+
+<h1>Comments</h1>
+<button><a href="{% url 'comment' items.id %}"> Add Commnet</a></button><br>
+{%for comment in comments %}
+    {{comment}}-{{comment.user.username}}---------{{comment.createdDate}}<br><br>
+
+{%empty%}
+    No comments
+{%endfor%}
+
+
+
+{% endblock %}
