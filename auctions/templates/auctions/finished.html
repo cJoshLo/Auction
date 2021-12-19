@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block body %}
+
+
+<h1> Auction is Closed</h1>
+
+    <img class="item_image" src="{{itemImage}}"><br>
+    <h3>Title: {{itemName}}</h3><br>
+    Description: {{itemDesciption}}
+    <br>
+    <br>
+    <h2>{{buyersName}} won {{itemName}} for ${{finalPrice}}  </h2>
+    
+    <br>
+    <br>
+    
+    <button><a href="{%url 'index' %}">Home Page</button></a>
+
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+
+
+/*General Style*/
+.body {
+    padding: 10px;
+    background-color: rgb(233, 233, 233);
+}
+
+
+h1{
+    color: rgb(0, 97, 97);
+}
+
+
+button{
+    background-color: rgb(197, 197, 197);
+}
+
+
+
+
+/*Image style*/
+
+.card {
+    margin-bottom: 10px; /* Added */
+}
+
+
+.item_image{
+    max-width: 175px;
+    height: 200px;
+}
+
+.logo-Image{
+    height: 80px;
+    width: auto;
+}
+
+
+/* image.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+} */
+
+
+/* Image style
+
+#text-link{
+    color:black;
+} */
+
+/* .card {
+    height: 200px;
+    margin-bottom: 10px; 
+} */
+
+/* #Active Listings{
+    down: 5px;
+} */

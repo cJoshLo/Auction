@@ -1,0 +1,29 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block body %}
+<h2>Active Listings</h2>
+<div class="Listing-items">
+        {% for items in items %}
+        <a href="{% url 'item_page' items.id %}">
+        <div class="card boarder-seconday mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img class="item_image" src="{{items.image.url}}"  ></a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="text_link"> {{items.title}} </h5>
+                                <p class="card-text"> {{items.description}}</p>
+                                <p class="card-text"> Current Bid: {{items.startingBid}}$</p>
+                                <p class="card-text"><small> Date Posted: {{items.created_date.day}}/{{items.created_date.month}}/{{items.created_date.year}} </small></p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {%empty%}
+            <li>No Listings Available check back later</li>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}
